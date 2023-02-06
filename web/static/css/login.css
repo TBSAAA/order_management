@@ -1,0 +1,125 @@
+body {
+    background-color: #f2f2f2;
+    font-size: 14px;
+}
+
+.login_box {
+    width: 470px;
+    height: 328px;
+    margin: 150px auto;
+    border-radius: 25px;
+    background-color: #fff;
+    position: relative;
+    box-shadow: 5px 10px 10px rgb(0 0 0 / 10%);
+}
+
+
+.login-btn {
+    width: 229px;
+    height: 38px;
+    margin-left: 14px;
+    line-height: 26px;
+    border-radius: 12px;
+    font-size: 16px;
+    border: none;
+    background-color: #5B89FE;
+    color: #fff;
+}
+
+.login-btn:hover {
+    background-color: #5B89FE;
+    color: #fff;
+}
+
+.ul-box {
+    top: 30px;
+    margin-left: 155px;
+    position: relative;
+    font-weight: 800;
+    font-size: 16px;
+}
+
+.pwd, .sms, .code {
+    cursor: pointer;
+}
+
+.pwd {
+    color: #5B89FE;
+    float: left;
+    margin-right: 20px;
+}
+
+.sms {
+    float: left;
+}
+
+.code {
+    color: #5B89FE;
+    position: absolute;
+    right: 0px;
+    top: 15px;
+}
+
+.code:hover {
+    color: #5B89FE;
+    text-decoration: none
+}
+
+#code:disabled {
+    background-color: #fff;
+    cursor: not-allowed
+}
+
+.register {
+    color: #aaa;
+    cursor: pointer;
+    position: absolute;
+    right: -80px;
+    bottom: -41px;
+    text-decoration: none;
+}
+
+.register:hover {
+    color: #5B89FE;
+    text-decoration: none;
+}
+
+
+
+.form-group {
+    position: relative;
+    display: block;
+    margin: 0 auto 30px;
+    width: 245px;
+    padding: 0;
+}
+
+
+.no-border {
+    padding: 23px 5px;
+    height: 40px;
+    width: 100%;
+
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    line-height: 22px;
+    letter-spacing: 0.5px;
+    border-bottom: #ebebeb solid 1px;
+    outline: none;
+}
+
+.form-box {
+    margin-top: 49px;
+}
+
+.input-icon {
+    position: absolute;
+    top: 0;
+    left: -31px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 44px;
+    text-align: left;
+    color: red;
+}
