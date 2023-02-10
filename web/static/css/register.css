@@ -3,9 +3,27 @@ body {
     font-size: 14px;
 }
 
+.register-btn {
+    width: 229px;
+    height: 38px;
+    margin-left: 48px;
+    margin-top: 20px;
+    line-height: 26px;
+    border-radius: 12px;
+    font-size: 16px;
+    border: none;
+    background-color: #5B89FE;
+    color: #fff;
+}
+
+.register-btn:hover {
+    background-color: #5B89FE;
+    color: #fff;
+}
+
 .register_box {
     width: 470px;
-    height: 454px;
+    height: 486px;
     margin: 150px auto;
     border-radius: 25px;
     background-color: #fff;
@@ -22,62 +40,6 @@ body {
 
 }
 
-.login-btn {
-    width: 229px;
-    height: 38px;
-    margin-left: 48px;
-    margin-top: 3px;
-    line-height: 26px;
-    border-radius: 12px;
-    font-size: 16px;
-    border: none;
-    background-color: #5B89FE;
-    color: #fff;
-}
-
-.login-btn:hover {
-    background-color: #5B89FE;
-    color: #fff;
-}
-
-.ul-box {
-    top: 30px;
-    margin-left: 155px;
-    position: relative;
-    font-weight: 800;
-    font-size: 16px;
-}
-
-.pwd, .sms, .code {
-    cursor: pointer;
-}
-
-.pwd {
-    color: #5B89FE;
-    float: left;
-    margin-right: 20px;
-}
-
-.sms {
-    float: left;
-}
-
-.code {
-    color: #5B89FE;
-    position: absolute;
-    right: 0px;
-    top: 15px;
-}
-
-.code:hover {
-    color: #5B89FE;
-    text-decoration: none
-}
-
-#code:disabled {
-    background-color: #fff;
-    cursor: not-allowed
-}
 
 .register {
     color: #aaa;
@@ -98,18 +60,12 @@ body {
 .form-group {
     position: relative;
     display: block;
-    margin: 0 auto 45px;
+    margin: 0 auto 25px;
     width: 316px;
-    padding: 0;
+    height: 70px;
+    /*padding-bottom: 0;*/
 }
 
-.error-info {
-    position: absolute;
-    margin-top: 7px;
-    color: #f03e3e;
-    font-weight: 500;
-    font-size: 13px;
-}
 
 .no-border {
     padding: 23px 5px;
@@ -138,4 +94,11 @@ body {
     line-height: 44px;
     text-align: left;
     color: red;
+}
+
+.error-info{
+    color: red;
+    font-size: 15px;
+    margin-left: 5px;
+    height: 15px;
 }

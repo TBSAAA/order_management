@@ -8,12 +8,9 @@
 
     <script type="text/javascript" src="{% static 'js/jquery-3.6.3.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/register.js' %}"></script>
-    {#    <script type="text/javascript" src="{% static 'js/common.js' %}"></script>#}
 
     <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/register.css' %}">
-    {#    <link rel="stylesheet" href="{% static 'css/common.css' %}">#}
     <link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'>
 
 
@@ -25,40 +22,30 @@
         <div class="register_title">
             Register
         </div>
-
         <div class="register_div">
             <div class="form-box">
+                <form method="post" novalidate>
+                    <div class="form-group">
+                        {{ form.username }}
+                        <i class="input-icon uil uil-at"></i>
+                        <span class="error-info">{{ form.username.errors.0 }}</span>
+                    </div>
+                    <div class="form-group">
+                        {{ form.password }}
+                        <i class="input-icon uil uil-lock-alt"></i>
+                        <span class="error-info">{{ form.password.errors.0 }}</span>
+                    </div>
 
-                <div class="form-group">
-                    <input type="text" id="account" name="account" class="no-border" placeholder="email">
-                    <i class="input-icon uil uil-at"></i>
-                    <div class="error-info">
-                        <i class="uil uil-exclamation-octagon d-none"></i>
-                        <span id="account-error"></span>
+                    <div class="form-group">
+                        {{ form.password_repeat }}
+                        <i class="input-icon uil uil-lock-alt"></i>
+                         <span class="error-info">{{ form.password_repeat.errors.0 }}</span>
                     </div>
-                </div>
-                <div class="form-group">
-                    <input type="password" id="password" name="password" class="no-border" placeholder="password">
-                    <i class="input-icon uil uil-lock-alt"></i>
-                    <div class="error-info">
-                        <i class="uil uil-exclamation-octagon d-none"></i>
-                        <span id="password-error"></span>
+                    <div class="form-group">
+                        <button type="submit" class="btn register-btn">register</button>
+                        <a class="register" href="/login/">Already have an account</a>
                     </div>
-                </div>
-
-                <div class="form-group">
-                    <input type="password" id="password-again" name="password-again" class="no-border"
-                           placeholder="enter password again">
-                    <i class="input-icon uil uil-lock-alt"></i>
-                    <div class="error-info">
-                        <i class="uil uil-exclamation-octagon d-none"></i>
-                        <span id="password-again-error"></span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="btn login-btn" id="pwd-login">register</div>
-                    <a class="register" href="/login/">Already have an account</a>
-                </div>
+                </form>
             </div>
         </div>
 

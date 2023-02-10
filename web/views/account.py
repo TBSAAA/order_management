@@ -4,8 +4,11 @@ from django_redis import get_redis_connection
 from web import models
 import base64
 from utils.encrypt import md5
+from utils.generate_image import generate_code
 import re
 from utils.ajax_response import BaseResponse
+from io import BytesIO
+from web.forms.account import RegisterForm
 
 
 #
@@ -129,21 +132,27 @@ def get_code(request):
     response.success = True
     return JsonResponse(response.dict)
 
+
 def register(request):
     if request.method == 'GET':
-        return render(request, 'register.html')
-    res = request.POST
-    account = base64.b64decode(res.get('account')).decode()
-    password = base64.b64decode(res.get('password')).decode()
-    if varify(account, password):
-        md5_pwd = md5(password)
-        # 存入数据库
-        user = models.User.objects.create(username=account, password=md5_pwd)
-        print(user)
-        return JsonResponse({'status': True, 'code': '1234'})
-    else:
-        return JsonResponse({'status': False, 'msg': '账号或密码格式错误'})
+        form = RegisterForm()
+        return render(request, 'register.html', {'form': form})
 
+    form = RegisterForm(data=request.POST)
+    if not form.is_valid():
+        return render(request, "register.html", {"form": form})
+
+    # Create a user
+    username = form.cleaned_data.pop('username')
+    password = form.cleaned_data.pop('password_repeat')
+
+    user = models.User.objects.create(username=username, password=password)
+    # write to session
+    request.session['user_id'] = user.id
+    request.session['user_type'] = user.user_type
+    request.session['user_name'] = user.username
+    request.session['level'] = user.level_id
+    return redirect('/index/')
 
 
 def logout(request):
@@ -151,4 +160,13 @@ def logout(request):
 
 
 def index(request):
-    pass
+    return HttpResponse('here is index')
+
+
+def image_question(request):
+    # Generate questions
+    img = generate_code()
+    # Return the image
+    stream = BytesIO()
+    img.save(stream, 'png')
+    return HttpResponse(stream.getvalue(), content_type='image/png')

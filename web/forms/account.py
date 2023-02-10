@@ -6,19 +6,30 @@ from utils.encrypt import md5
 from web import models
 from django_redis import get_redis_connection
 
-class LoginForm(forms.Form):
-    telephone = forms.CharField(max_length=11, min_length=11, validators=[RegexValidator(r'1[3-9]\d{9}', message='手机号码格式错误')])
-    password = forms.CharField(max_length=32, min_length=6, error_messages={'max_length': '密码最多不能超过32位', 'min_length': '密码最少不能少于6位'})
-    remember = forms.IntegerField(required=False)
 
-    def clean(self):
-        cleaned_data = super().clean()
-        telephone = cleaned_data.get('telephone')
-        password = cleaned_data.get('password')
-        user = models.User.objects.filter(telephone=telephone).first()
-        if not user:
-            raise ValidationError('手机号码或者密码错误')
-        if not user.check_password(password):
-            raise ValidationError('手机号码或者密码错误')
-        cleaned_data['user'] = user
-        return cleaned_data
+class RegisterForm(forms.Form):
+    username = forms.CharField(
+        validators=[
+            RegexValidator(r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$', 'please input email address'), ],
+        widget=forms.TextInput(attrs={"class": "no-border", "placeholder": "email"}),
+    )
+
+    password = forms.CharField(
+        min_length=8,
+        max_length=32,
+        widget=forms.PasswordInput(attrs={"class": "no-border", "placeholder": "password"}, render_value=True)
+    )
+
+    password_repeat = forms.CharField(
+        min_length=8,
+        max_length=32,
+        widget=forms.PasswordInput(attrs={"class": "no-border", "placeholder": "password again"}, render_value=True)
+    )
+
+    def clean_password_repeat(self):
+        password = self.cleaned_data.get('password')
+        password_repeat = self.cleaned_data.get('password_repeat')
+        if password == password_repeat:
+            return md5(password_repeat)
+        else:
+            raise ValidationError('password is not the same')
