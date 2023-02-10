@@ -21,7 +21,7 @@ class User(ActiveBaseModel):
     """ customer table / Administrator table"""
     user_type = models.SmallIntegerField(verbose_name="user_type", default=2)
     username = models.CharField(verbose_name="user_name", max_length=32, db_index=True)
-    password = models.CharField(verbose_name="password", max_length=64)
+    password = models.CharField(verbose_name="password", max_length=32)
     mobile = models.CharField(verbose_name="phone_number", max_length=10, db_index=True, null=True, blank=True,
                               validators=[RegexValidator(r'^\d{10}$', 'Malformed phone number'), ], )
     balance = models.DecimalField(verbose_name="balance", default=0, max_digits=10, decimal_places=2)

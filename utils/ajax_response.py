@@ -8,3 +8,4 @@ class BaseResponse(object):
     @property
     def dict(self):
         return self.__dict__
+ 

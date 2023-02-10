@@ -7,6 +7,7 @@ var submit = function (url, data) {
         data: data,
         success: function (data) {
             alert(data['content']);
+            console.log(data);
             if (data['status_code'] === 1) {
                 location.href = url === '/api/login' ? '/challenge/' : '/login/';
             }
@@ -100,16 +101,13 @@ function get_code() {
 // Verification code countdown function
 function timer(timeout) {
     let $code = $(".code");
-    console.log('iamhere');
     // restore input box
    $("#code").removeAttr("disabled").text('');
+   $code.css({"pointer-events": "none", "color": "#989cb2"});
     let reminder = setInterval(function () {
         $code.text(timeout + "s");
-        $code.css({"pointer-events": "none", "color": "#989cb2"});
-        console.log(timeout);
         timeout--;
-        if (timeout < 0) {
-            console.log('iamhere--aaaa');
+        if (timeout < 1) {
             clearInterval(reminder);
             $code.text("get code");
             $code.removeAttr("style");
@@ -119,7 +117,7 @@ function timer(timeout) {
 }
 
 function verify_email(email) {
-    regexp = new RegExp('[\\w!#$%&\'*+/=?^_`{|}~-]+(?:\.[\\w!#$%&\'*+/=?^_`{|}~-]+)*@(?:[\\w](?:[\\w-]*[\\w])?\.)+[\\w](?:[\\w-]*[\\w])?');
+    regexp = new RegExp('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$');
     return regexp.test(email);
 }
 
@@ -129,7 +127,7 @@ function valid_mobile(mobile) {
 }
 
 function valid_sms_code(smsCode) {
-    regexp = new RegExp('^\d{6}$');
+    regexp = new RegExp('^\\d{6}$');
     return regexp.test(smsCode);
 }
 

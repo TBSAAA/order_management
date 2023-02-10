@@ -3,9 +3,9 @@ body {
     font-size: 14px;
 }
 
-.login_box {
+.register_box {
     width: 470px;
-    height: 362px;
+    height: 454px;
     margin: 150px auto;
     border-radius: 25px;
     background-color: #fff;
@@ -13,12 +13,20 @@ body {
     box-shadow: 5px 10px 10px rgb(0 0 0 / 10%);
 }
 
+.register_title {
+    color: #5B89FE;
+    font-size: 20px;
+    font-weight:bold;
+    text-align: center;
+    padding-top: 23px;
+
+}
 
 .login-btn {
     width: 229px;
     height: 38px;
     margin-left: 48px;
-    margin-top: -6px;
+    margin-top: 3px;
     line-height: 26px;
     border-radius: 12px;
     font-size: 16px;
@@ -95,7 +103,6 @@ body {
     padding: 0;
 }
 
-
 .error-info {
     position: absolute;
     margin-top: 7px;
@@ -119,7 +126,7 @@ body {
 }
 
 .form-box {
-    margin-top: 49px;
+    margin-top: 13px;
 }
 
 .input-icon {
