@@ -156,7 +156,8 @@ def register(request):
 
 
 def logout(request):
-    pass
+    request.session.clear()
+    return redirect('/')
 
 
 def index(request):
