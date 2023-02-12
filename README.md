@@ -1,5 +1,5 @@
 # Order Management System
-test website: www.haoranhuang.me
+test website: www.haoranhuang.me/login
 
 This project is a Django based order management system. It's designed to help businesses manage their order process effectively.
 
