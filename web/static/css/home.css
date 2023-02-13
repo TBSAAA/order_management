@@ -8,17 +8,8 @@ html, body {
     height: 100%;
 }
 
-body {
-    background-image: linear-gradient(to left, rgba(255, 0, 149, 0.2), rgba(0, 247, 255, 0.2)), url(../images/bg.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-}
 
 #box {
-     background-color: red;
-    /*width: 1200px;*/
-
     height: 100px;
     margin: 0 auto;
     width: fit-content;
@@ -29,15 +20,13 @@ body {
     width: 615px;
     height: 615px;
     float: left;
-    /*border : 1px solid black;*/
-     /*background-color: green;*/
 }
 
 .cmd {
     width: 600px;
     height: 600px;
     border-radius: 10px 10px 5px 5px;
-    background-color: rgba(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.9);
     transition: all 0.3s;
     font-size: 14px;
     color: rgb(88, 89, 92);
@@ -119,21 +108,21 @@ body {
 
 
 
-.cmd .cmdText .ul {
+.ul-list {
     margin-left: 15px;
 }
 
-.cmd .cmdText .ul a {
+.ul-list a {
     text-decoration: none;
     color: rgb(88, 89, 92);
 }
 
-.cmd .cmdText .ul a:hover {
+.ul-list a:hover {
     color: rgb(0, 132, 255);
 }
 
 
-.meBox {
+.profile-box {
     float: right;
     width: 20rem;
     height: 25rem;
@@ -145,17 +134,9 @@ body {
     text-align: center;
 }
 
-.meBox:hover {
-    width: 21rem;
-    height: 26rem;
-    /*margin: 95px 0 0 -5px;*/
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-}
-
-.headPhoto {
+.avatar {
     width: 8rem;
     height: 8rem;
-    background: url(../images/WechatIMG23.jpeg) no-repeat;
     background-size: cover;
     border-radius: 50%;
     position: relative;
@@ -165,17 +146,7 @@ body {
     transition: all 0.3s;
 }
 
-.meBox:hover .headPhoto {
-    width: 9rem;
-    height: 9rem;
-    margin: -0.5rem 0 0 -4.5rem;
-}
-
-.headPhoto:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.meBox-title {
+.profile-title {
     width: auto;
     margin: 0 auto;
 }
@@ -192,7 +163,7 @@ body {
     }
 }
 
-.meBox-title p {
+.profile-title p {
     font-size: 1.2rem;
     border-right: .1em solid;
     width: 12ch;
@@ -203,39 +174,31 @@ body {
     transition: all 0.3s;
 }
 
-.meBox:hover .meBox-title p {
-    font-size: 1.3rem;
-}
-
-.meBox-title .fg {
+.profile-title .fg {
     width: 80%;
     height: 2px;
     background-image: linear-gradient(to left, #3498db, #2980b9);
     margin: 5% 0 0 10%;
 }
 
-.meBox-text {
+.profile-text {
     width: 80%;
     height: 45%;
     overflow: hidden;
     text-align: center;
     color: rgb(70, 70, 70);
-    animation-name: meBox-text;
+    animation-name: profile-text;
     animation-duration: 2s;
     animation-fill-mode: forwards;
     margin: 5% 0 0 10%;
     transition: all 0.3s;
 }
 
-.meBox-text p {
+.profile-text p {
     margin-top: 5px;
 }
 
-.meBox:hover .meBox-text {
-    font-size: 1.05rem;
-}
-
-@keyframes meBox-text {
+@keyframes profile-text {
     0% {
         transform: translateY(50px);
         color: white;
@@ -247,141 +210,17 @@ body {
     }
 }
 
-.meBox-Button {
+.profile-Button {
     width: 100%;
 }
 
-.meBox-Button a {
+.profile-Button a {
     display: inline-block;
     float: left;
-    width: 158px;
-    height: 50px;
-    margin-top: 13px;
+    width: 105px;
+    height: 30px;
     line-height: 50px;
     text-decoration: none;
     color: gray;
     transition: all 0.3s;
-}
-
-.meBox-Button a:hover {
-    color: rgb(0, 132, 255);
-    font-size: 1.2rem;
-}
-
-.meBox:hover .meBox-Button a {
-    width: 165px;
-    margin-top: 10px;
-}
-
-
-/* è‡ªé€‚åº” */
-@media screen and (max-width: 1250px) {
-    #box {
-        width: 100%;
-    }
-
-    .meBox {
-        margin-left: 3%;
-    }
-
-    .meBox:hover {
-        width: 21rem;
-        height: 26rem;
-        margin: 95px 0 0 2.5%;
-    }
-
-    #cmdBox {
-        margin-right: 3%;
-    }
-}
-
-@media screen and (max-width: 1120px) {
-    .meBox {
-        float: none;
-        margin: 100px auto 100px;
-    }
-
-    .meBox:hover {
-        width: 20rem;
-        height: 25rem;
-        margin: 105px auto 100px;
-    }
-
-    .meBox:hover .meBox-Button a {
-        width: 158px;
-        height: 50px;
-        margin-top: 13px;
-    }
-
-    .meBox:hover .meBox-title p {
-        font-size: 1.2rem;
-    }
-
-    .meBox:hover .headPhoto {
-        width: 8rem;
-        height: 8rem;
-        margin: -0.5rem 0 0 -4rem;
-    }
-
-    #cmdBox {
-        float: none;
-        margin: 0 auto 100px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .meBox {
-        width: 300px;
-    }
-
-    .meBox:hover {
-        width: 300px;
-        height: 25rem;
-        margin: 100px auto 100px;
-    }
-
-    .meBox-Button a:hover {
-        color: rgb(0, 132, 255);
-    }
-
-    .meBox:hover .meBox-Button a {
-        width: 150px;
-        margin-top: 13px;
-    }
-
-    .meBox:hover .meBox-title p {
-        font-size: 1.2rem;
-    }
-
-    .meBox:hover .headPhoto {
-        width: 8rem;
-        height: 8rem;
-        margin: -0.5rem 0 0 -4rem;
-        /*transform: rotate(360deg);*/
-    }
-
-    .meBox:hover .meBox-text {
-        font-size: 1rem;
-    }
-
-    .meBox-Button a {
-        width: 150px;
-    }
-
-    #cmdBox {
-        width: 100%;
-        height: 850px;
-    }
-
-    .cmd {
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    .cmd:hover {
-        width: 90%;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-        margin: 0 auto;
-        z-index: 1;
-    }
 }

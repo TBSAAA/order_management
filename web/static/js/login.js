@@ -6,8 +6,7 @@ var submit = function (url, data) {
         type: 'post',
         data: data,
         success: function (data) {
-            alert(data['content']);
-            console.log(data);
+            alert(data['message']);
             if (data['status_code'] === 1) {
                 location.href = url === '/api/login' ? '/challenge/' : '/login/';
             }

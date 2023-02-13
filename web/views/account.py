@@ -163,6 +163,8 @@ def logout(request):
 def index(request):
     return HttpResponse('here is index')
 
+def home(request):
+    return render(request, 'home.html')
 
 def image_question(request):
     # Generate questions

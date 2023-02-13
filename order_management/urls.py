@@ -18,7 +18,7 @@ from django.urls import path
 from web.views import account
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
+    path('', account.home, name='home'),
     path('login/', account.login, name='login'),
     path('get_code/', account.get_code, name='get_code'),
     path('register/', account.register, name='register'),

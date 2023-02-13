@@ -9,9 +9,9 @@ server {
         listen       443 ssl;
         server_name  www.haoranhuang.me;
 
-        #证书文件
+        # certificate file
         ssl_certificate      /home/ubuntu/ssl/9279151_www.haoranhuang.me.pem;
-        #私钥文件
+        # private key file
         ssl_certificate_key  /home/ubuntu/ssl/9279151_www.haoranhuang.me.key;
 
         ssl_session_cache    shared:SSL:1m;
