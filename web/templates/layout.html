@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}{% endblock %}
+    <link rel="icon" href="{% static 'images/avatar.jpeg' %}" type="image/png">
+    <script type="text/javascript" src="{% static 'js/jquery-3.6.3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    {% block js %}{% endblock %}
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
+    <link rel='stylesheet' href="{% static 'css/unicons.css'%}">
+    {% block css %}{% endblock %}
+</head>
+<body>
+{% block content %}{% endblock %}
+</body>
+</html>
