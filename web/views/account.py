@@ -163,6 +163,7 @@ def logout(request):
 
 
 def index(request):
+    # return render(request, 'test.html')
     return HttpResponse('here is index')
 
 

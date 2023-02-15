@@ -4,48 +4,76 @@
 {% block js %}
     <script type="text/javascript" src="{% static 'js/common.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/menu.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/header.js' %}"></script>
 {% endblock %}
 
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/common.css' %}">
     <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
 {% endblock %}
 
 {% block content %}
+
     <div class="side-bar">
-        <div class="brand"></div>
-    <div class="menu-body">
+        <div class="brand">
+            <div class="logo">
+                <a href={% url 'home' %}><img src="{% static 'images/logo_2.png' %}"></a>
+            </div>
+            <div class="toggle-switch">
+                <i class="uil uil-bars"></i>
+            </div>
+
+        </div>
+        <div class="menu-body">
 
             <div class="menu">
-                <div class="parent">
+                <div class="level-1">
                     <i class="uil uil-users-alt"></i>
-                    <span class="font">user management</span>
+                    <span>User Management</span>
                     <i class="uil uil-angle-down"></i>
 
-                        <div class="children d-none">
-                            <a href="/users/" class="level_two a-tag">user list</a>
-                        </div>
+                    <div class="level-2 d-none">
+                        <a href="/users/">user list</a>
+                    </div>
 
-                        <div class="children d-none">
-                            <a href="/transaction_records/" class="level_two a-tag">transaction records</a>
-                        </div>
+                    <div class="level-2 d-none">
+                        <a href="/transaction_records/">transaction records</a>
+                    </div>
 
                 </div>
             </div>
 
 
-    </div>
+        </div>
     </div>
 
     <div class="right-box">
         <div class="header-box">
+            <div class="user-box">
+                <div class="message">
+                    <i class="uil uil-bell"></i>
+                </div>
+                <div class="user-all">
+                    <div class="user">
+                        <img src={% static 'images/github.png' %} }>
+                    </div>
 
-        </div>
-        <div class="content-box">
+                    <div class="user-options" id="1">
+                        <div class="option cursor-pointer">
+                            <a href="/user_center/" class="logout">个人中心</a>
+                        </div>
+                        <div class="option cursor-pointer" id="transaction_record">交易记录</div>
+                        <div class="option cursor-pointer">
+                            <a href="/logout/" class="logout">退出登录</a>
+                        </div>
+                    </div>
+                </div>
 
+
+            </div>
         </div>
+        <div class="content-box"></div>
     </div>
-
-
 
 {% endblock %}
