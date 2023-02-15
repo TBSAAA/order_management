@@ -131,3 +131,12 @@ except ImportError:
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 SESSION_CACHE_ALIAS = 'default'
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 7  # 7 days
+
+# define user session key
+ORDER_USER_SESSION = 'user_info'
+
+# urls config
+INDEX_URL = "/index"
+WHITE_LIST_URL = ['/login/', '/get_code/', '/register/', '/login_with_code/', '']
+LOGIN_URL = "/login"
+

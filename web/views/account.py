@@ -9,6 +9,7 @@ import re
 from utils.ajax_response import BaseResponse
 from io import BytesIO
 from web.forms.account import RegisterForm
+from django.conf import settings
 
 
 #
@@ -30,10 +31,12 @@ def login(request):
 
     # passed all validations
     if response.success:
-        request.session['user_id'] = user.id
-        request.session['user_type'] = user.user_type
-        request.session['user_name'] = user.username
-        request.session['level'] = user.level_id
+        print(user.user_type)
+        mapping = {"1": "ADMIN", "2": "CUSTOMER"}
+        request.session[settings.ORDER_USER_SESSION] = {'user_id': user.id, 'user_type': mapping[str(user.user_type)],
+                                                        'name': user.username, 'level': user.level_id, }
+        response.code = 200
+        response.data = {"url": settings.LOGIN_URL}
 
     return JsonResponse(response.dict)
 
@@ -148,23 +151,25 @@ def register(request):
 
     user = models.User.objects.create(username=username, password=password)
     # write to session
-    request.session['user_id'] = user.id
-    request.session['user_type'] = user.user_type
-    request.session['user_name'] = user.username
-    request.session['level'] = user.level_id
-    return redirect('/index/')
+    # passed all validations
+    mapping = {"1": "ADMIN", "2": "CUSTOMER"}
+    request.session[settings.ORDER_USER_SESSION] = {'user_id': user.id, 'user_type': mapping[str(user.user_type)],
+                                                    'name': user.username, 'level': user.level_id, }
+    return redirect(settings.INDEX_URL)
 
 
 def logout(request):
     request.session.clear()
-    return redirect('/')
+    return redirect(settings.LOGIN_URL)
 
 
 def index(request):
     return HttpResponse('here is index')
 
+
 def home(request):
     return render(request, 'home.html')
+
 
 def image_question(request):
     # Generate questions
