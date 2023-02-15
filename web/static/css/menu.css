@@ -1,0 +1,38 @@
+.menu{
+    float: left;
+    line-height: 40px;
+    font-size: 15px;
+    width: 100%;
+    user-select: none;
+    color: #141933;
+}
+
+
+.menu:hover{
+    color: #5B89FE;
+    cursor: pointer;
+}
+
+.parent{
+    background-color: #f4f5fc;
+}
+
+.uil-users-alt{
+    font-size: 20px;
+    margin-right: 15px;
+    margin-left: 25px;
+}
+
+.uil-angle-down{
+    font-size: 14px;
+    float: right;
+    margin-right: 25px;
+}
+
+.children{
+    height: 40px;
+    line-height: 40px;
+    padding-left: 60px;
+    border-radius: 3px;
+    user-select: none;
+}

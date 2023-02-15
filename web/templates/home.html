@@ -1,10 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>home</title>
-</head>
-<body>
-<p>home</p>
-</body>
-</html>
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block js %}
+    <script type="text/javascript" src="{% static 'js/common.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/menu.js' %}"></script>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="side-bar">
+        <div class="brand"></div>
+    <div class="menu-body">
+
+            <div class="menu">
+                <div class="parent">
+                    <i class="uil uil-users-alt"></i>
+                    <span class="font">user management</span>
+                    <i class="uil uil-angle-down"></i>
+
+                        <div class="children d-none">
+                            <a href="/users/" class="level_two a-tag">user list</a>
+                        </div>
+
+                        <div class="children d-none">
+                            <a href="/transaction_records/" class="level_two a-tag">transaction records</a>
+                        </div>
+
+                </div>
+            </div>
+
+
+    </div>
+    </div>
+
+    <div class="right-box">
+        <div class="header-box">
+
+        </div>
+        <div class="content-box">
+
+        </div>
+    </div>
+
+
+
+{% endblock %}

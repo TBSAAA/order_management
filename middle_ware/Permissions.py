@@ -26,5 +26,5 @@ class Authority(MiddlewareMixin):
         request.order_user = UserInfo(**user_dict)
         return None
 
-    # def process_view(self, request, view_func, view_args, view_kwargs):
-    #     pass
+    def process_view(self, request, view_func, view_args, view_kwargs):
+        pass

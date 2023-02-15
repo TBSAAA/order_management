@@ -31,7 +31,7 @@ def login(request):
 
     # passed all validations
     if response.success:
-        mapping = {"1": "ADMIN", "2": "CUSTOMER"}
+        mapping = {"1": "ADMIN", "2": "USER"}
         request.session[settings.ORDER_USER_SESSION] = {'user_id': user.id, 'user_type': mapping[str(user.user_type)],
                                                         'name': user.username, 'level': user.level_id, }
         response.code = 200
@@ -150,7 +150,7 @@ def register(request):
     user = models.User.objects.create(username=username, password=password)
     # write to session
     # passed all validations
-    mapping = {"1": "ADMIN", "2": "CUSTOMER"}
+    mapping = {"1": "ADMIN", "2": "USER"}
     request.session[settings.ORDER_USER_SESSION] = {'user_id': user.id, 'user_type': mapping[str(user.user_type)],
                                                     'name': user.username, 'level': user.level_id, }
     return redirect(settings.HOME_URL)
