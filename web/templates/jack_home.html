@@ -1,0 +1,92 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    <title>home</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <style>
+        body { background-image:url("{% static 'images/temp_back_ground.jpg' %}");}
+        .avatar { background-image:url("{% static 'images/avatar.jpeg' %}"); }
+        {#.red { background-image:url("{% static 'images/icons8-expand-32.png' %}");width: 3px; vertical-align: middle; }#}
+    </style>
+{% endblock %}
+
+{% block content %}
+
+    <div id="box">
+        <div id="cmdBox">
+            <div class="cmd">
+                <div class="click">
+                    <div class="red"></div>
+                    <div class="yellow"></div>
+                    <div class="green"></div>
+                </div>
+                <div class="title">
+                    <span>Jack-Huang - bash</span>
+                </div>
+                <div class="cmdText">
+                    <span style="color: rgb(44,220,44);">root@jack</span>
+                    <span style="color: rgb(37,86,241);">~</span>
+                    <span style="color: rgb(0,0,0);">cat ~/Haoran/profile.log</span>
+                    <p>I know some HTML, CSS, JS and Django framework</p>
+                    <p>Like to study the source code</p>
+                    <p>Looking for a job in website development</p>
+                    <p>Like unknown and challenging things</p>
+                    <p>Not afraid of challenge</p>
+                    <p>Always Looking for new opportunities to improve my skills and knowledge.</p>
+
+
+
+
+                    <span style="color: rgb(44,220,44);">root@jack</span>
+                    <span style="color: rgb(37,86,241);">~</span>
+                    <span style="color: rgb(0,0,0);">python ~/web_list.py</span>
+                    <br>
+                    <spanp>print result: </spanp>
+                    <div class="ul-list">
+                        <li><a href="/login">order management system</a></li>
+                        <li><a href="#">lottery data collection and analysis tool</a></li>
+                        <li><a href="#">Web-crawler</a></li>
+                        <li><a href="#">WSD_Hotel</a></li>
+                    </div>
+                    <br>
+                    <span style="color: rgb(44,220,44);">root@jack</span>
+                    <span style="color: rgb(37,86,241);">~</span>
+                    <span style="color: rgb(0,0,0);">cat ~/project_progress.sh</span>
+                    <p></p>
+                    <p>The page is still under construction.<img src="{% static 'images/under-construction-icon.webp' %}"
+                                style="width: 25px; vertical-align: middle;"></p>
+                    <div class="fg"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile -->
+        <div class="profile-box">
+            <!-- Avatar -->
+            <div class="avatar"></div>
+            <!-- introduction -->
+            <div class="profile-title">
+                <p>Haoran Huang</p>
+                <div class="fg"></div>
+            </div>
+            <div class="profile-text">
+                <p>computer science graduate</p>
+                <p>love programming</p>
+                <p>python & c++</p>
+            </div>
+            <div class="profile-Button">
+                <a href="#"><img src="{% static 'images/github.png' %}"
+                                style="width: 28px; vertical-align: middle;"></a>
+                <a href="#"><img src="{% static 'images/linkin.png' %}"
+                                style="width: 28px; vertical-align: middle;"></a>
+                <a href="#"><img src="{% static 'images/Phone-Icon.webp' %}"
+                                style="width: 28px; vertical-align: middle;"></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -15,14 +15,16 @@ class Authority(MiddlewareMixin):
     def process_request(self, request):
 
         # 1. Access without login
-        if request.path_info in settings.WHITE_LIST:
-            return None
+        if request.path_info in settings.WHITE_LIST_URL:
+            return
 
+        # 2. Access with login
         user_dict = request.session.get(settings.ORDER_USER_SESSION)
+        # 2.1 If not logged in, redirect to login page
         if not user_dict:
             return redirect(settings.LOGIN_URL)
         request.order_user = UserInfo(**user_dict)
         return None
 
-    def process_view(self, request, view_func, view_args, view_kwargs):
-        pass
+    # def process_view(self, request, view_func, view_args, view_kwargs):
+    #     pass

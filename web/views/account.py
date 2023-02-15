@@ -31,12 +31,11 @@ def login(request):
 
     # passed all validations
     if response.success:
-        print(user.user_type)
         mapping = {"1": "ADMIN", "2": "CUSTOMER"}
         request.session[settings.ORDER_USER_SESSION] = {'user_id': user.id, 'user_type': mapping[str(user.user_type)],
                                                         'name': user.username, 'level': user.level_id, }
         response.code = 200
-        response.data = {"url": settings.LOGIN_URL}
+        response.data = {"url": settings.HOME_URL}
 
     return JsonResponse(response.dict)
 
@@ -58,7 +57,7 @@ def login_with_code(request):
         return response, user
     # Check whether the verification code is correct
     redis_conn = get_redis_connection('default')
-    redis_code = redis_conn.get(mobile)
+    redis_code = redis_conn.get(mobile).decode()
     if not redis_code:
         response.message = 'verification code has expired'
         return response, user
@@ -104,7 +103,6 @@ def login_with_password(request):
 
 
 def get_code(request):
-    print(request.POST)
     response = BaseResponse()
     try:
         mobile = base64.b64decode(request.POST.get('mobile')).decode()
@@ -155,11 +153,12 @@ def register(request):
     mapping = {"1": "ADMIN", "2": "CUSTOMER"}
     request.session[settings.ORDER_USER_SESSION] = {'user_id': user.id, 'user_type': mapping[str(user.user_type)],
                                                     'name': user.username, 'level': user.level_id, }
-    return redirect(settings.INDEX_URL)
+    return redirect(settings.HOME_URL)
 
 
 def logout(request):
     request.session.clear()
+    # return HttpResponse('here is logout')
     return redirect(settings.LOGIN_URL)
 
 
@@ -178,3 +177,7 @@ def image_question(request):
     stream = BytesIO()
     img.save(stream, 'png')
     return HttpResponse(stream.getvalue(), content_type='image/png')
+
+
+def jack_home(request):
+    return render(request, 'jack_home.html')

@@ -39,13 +39,14 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    # 'django.middleware.security.SecurityMiddleware',
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     # 'django.middleware.csrf.CsrfViewMiddleware',
     # 'django.contrib.auth.middleware.AuthenticationMiddleware',
     # 'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'middle_ware.Permissions.Authority'
 ]
 
 ROOT_URLCONF = 'order_management.urls'
@@ -139,4 +140,6 @@ ORDER_USER_SESSION = 'user_info'
 INDEX_URL = "/index"
 WHITE_LIST_URL = ['/login/', '/get_code/', '/register/', '/login_with_code/', '']
 LOGIN_URL = "/login"
+HOME_URL = "/home"
 
+# dynamic menu config
