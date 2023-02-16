@@ -6,14 +6,14 @@
     color: #0068FF;
 }
 
-.logo > a >img{
+.logo > a > img {
     /*max-width: 100%;*/
     width: 170px;
     height: 58px;
     vertical-align: middle;
 }
 
-.toggle-switch{
+.toggle-switch {
     position: absolute;
     top: 1px;
     left: 192px;
@@ -21,42 +21,42 @@
     height: 57px;
 }
 
-.uil-bars{
+.uil-bars {
     float: right;
     font-size: 30px;
     margin-right: 11px;
     margin-top: 5px;
 }
 
-.toggle-switch:hover{
+.toggle-switch:hover {
     cursor: pointer;
     color: #5B89FE;
 }
 
-.user-box{
+.user-box {
     float: right;
     width: 150px;
     margin-top: 10px;
 }
 
-.message{
+.message {
     float: left;
     margin-top: 3px;
 }
 
-.uil-bell{
+.uil-bell {
     display: block;
-    font-size: 43px;
-    margin-left: -19px;
-    margin-top: -16px;
+    font-size: 36px;
+    margin-left: -9px;
+    margin-top: -10px;
 }
 
-.user-all{
+.user-all {
     float: right;
     position: absolute;
 }
 
-.user{
+.avatar-home {
     position: absolute;
     width: 40px;
     height: 40px;
@@ -65,7 +65,11 @@
     left: 50px;
 }
 
-.user > img{
+.avatar-home:hover {
+    border: #5B89FE solid 2px;
+}
+
+.avatar-home > img {
     width: 100%;
     height: 100%;
 }
@@ -73,12 +77,25 @@
 .user-options {
     position: relative;
     width: 120px;
-    background-color: #f4f6fb;
+    background-color: #f4f5fc;
     border-radius: 10px;
     right: -10px;
     top: 49px;
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
     z-index: 99;
     padding: 10px 0;
-    font-size: 14px;
+    font-size: 15px;
+}
+
+.option{
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 8px;
+    color: #0f0f0f;
+}
+
+.option:hover{
+    background-color: #5B89FE;
+    cursor: pointer;
 }

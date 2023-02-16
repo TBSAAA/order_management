@@ -53,19 +53,22 @@
             <div class="user-box">
                 <div class="message">
                     <i class="uil uil-bell"></i>
+{#                    <i class="fa-light fa-bell"></i>#}
                 </div>
                 <div class="user-all">
-                    <div class="user">
+                    <div class="avatar-home">
                         <img src={% static 'images/github.png' %} }>
                     </div>
 
-                    <div class="user-options" id="1">
-                        <div class="option cursor-pointer">
-                            <a href="/user_center/" class="logout">个人中心</a>
+                    <div class="user-options">
+                        <div class="option">
+                            <a href="/user_center/" class="logout">Account</a>
                         </div>
-                        <div class="option cursor-pointer" id="transaction_record">交易记录</div>
-                        <div class="option cursor-pointer">
-                            <a href="/logout/" class="logout">退出登录</a>
+                        <div class="option">
+                            <a href="/logout/" class="logout">Record</a>
+                        </div>
+                        <div class="option">
+                            <a href="/logout/" class="logout">Logout</a>
                         </div>
                     </div>
                 </div>
