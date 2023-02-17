@@ -149,23 +149,23 @@ MENU_LIST = {
             "title": "User Management",
             "icon": "uil uil-users-alt",
             "children": [
-                {"title": "user list", "url": "/user/list/"},
-                {"title": "level management", "url": "/user/list/"},
-                {"title": "Price Strategy", "url": "/user/list/"},
+                {"title": "user list", "url": "/user/list/", "name": "user_list"},
+                {"title": "level management", "url": "/user/list/", "name": "level_list"},
+                {"title": "Price Strategy", "url": "/user/list/", "name": "price_list"},
             ]
         },
         {
             "title": "Order",
             "icon": "uil uil-users-alt",
             "children": [
-                {"title": "order List", "url": "/order/list/"},
+                {"title": "order List", "url": "/order/list/", "name": "order_list"},
             ]
         },
         {
             "title": "Commodity",
             "icon": "uil uil-users-alt",
             "children": [
-                {"title": "product list", "url": "/product/list/"},
+                {"title": "product list", "url": "/product/list/", "name": "product_list"},
             ]
         },
     ],
@@ -174,9 +174,51 @@ MENU_LIST = {
             "title": "Order center",
             "icon": "uil uil-users-alt",
             "children": [
-                {"title": "order management", "url": "/order/list/"},
-                {"title": "transaction record", "url": "/order/add/"},
+                {"title": "order management", "url": "/order/list/", "name": "user_order_list"},
+                {"title": "transaction record", "url": "/order/add/", "name": "user_transaction_list"},
             ]
         },
     ],
+}
+
+# permissions config
+PUBLIC_PERMISSION = {
+    "home": {"title": "home", 'parent': None},
+    "logout": {"title": "logout", 'parent': None},
+}
+
+PERMISSION_LIST = {
+    "ADMIN": {
+        "user_list": {"title": "user list", 'parent': None},
+        "user_add": {"title": "user add", 'parent': "user_list"},
+        "user_edit": {"title": "user edit", 'parent': "user_list"},
+        "user_delete": {"title": "user del", 'parent': "user_list"},
+
+        "level_list": {"title": "level management", 'parent': None},
+        "level_add": {"title": "level add", 'parent': "level_list"},
+        "level_edit": {"title": "level edit", 'parent': "level_list"},
+        "level_delete": {"title": "level del", 'parent': "level_list"},
+
+        "price_list": {"title": "price strategy", 'parent': None},
+        "price_add": {"title": "price add", 'parent': "price_list"},
+        "price_edit": {"title": "price edit", 'parent': "price_list"},
+        "price_delete": {"title": "price del", 'parent': "price_list"},
+
+        "order_list": {"title": "order list", 'parent': None},
+        "order_add": {"title": "order add", 'parent': "order_list"},
+        "order_edit": {"title": "order edit", 'parent': "order_list"},
+        "order_delete": {"title": "order del", 'parent': "order_list"},
+
+        "product_list": {"title": "product list", 'parent': None},
+        "product_add": {"title": "product add", 'parent': "product_list"},
+        "product_edit": {"title": "product edit", 'parent': "product_list"},
+        "product_delete": {"title": "product del", 'parent': "product_list"},
+
+    },
+    "USER": {
+        "user_order_list": {"text": "order management", 'parent': None},
+
+        "user_transaction_list": {"text": "transaction record", 'parent': None},
+
+    }
 }
