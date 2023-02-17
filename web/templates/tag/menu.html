@@ -1,0 +1,17 @@
+<div class="menu">
+    {% for item in menu_list %}
+        <div class="level-1">
+            <i class="{{ item.icon }}"></i>
+            <span>{{ item.title }}</span>
+            <i class="uil uil-angle-down"></i>
+
+            {% for child in item.children %}
+                <div class="level-2 d-none">
+                    <a href="{{ child.url }}">{{ child.title }}</a>
+                </div>
+            {% endfor %}
+
+        </div>
+    {% endfor %}
+</div>
+

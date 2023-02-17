@@ -143,3 +143,40 @@ LOGIN_URL = "/login"
 HOME_URL = "/home"
 
 # dynamic menu config
+MENU_LIST = {
+    "ADMIN": [
+        {
+            "title": "User Management",
+            "icon": "uil uil-users-alt",
+            "children": [
+                {"title": "user list", "url": "/user/list/"},
+                {"title": "level management", "url": "/user/list/"},
+                {"title": "Price Strategy", "url": "/user/list/"},
+            ]
+        },
+        {
+            "title": "Order",
+            "icon": "uil uil-users-alt",
+            "children": [
+                {"title": "order List", "url": "/order/list/"},
+            ]
+        },
+        {
+            "title": "Commodity",
+            "icon": "uil uil-users-alt",
+            "children": [
+                {"title": "product list", "url": "/product/list/"},
+            ]
+        },
+    ],
+    "USER": [
+        {
+            "title": "Order center",
+            "icon": "uil uil-users-alt",
+            "children": [
+                {"title": "order management", "url": "/order/list/"},
+                {"title": "transaction record", "url": "/order/add/"},
+            ]
+        },
+    ],
+}

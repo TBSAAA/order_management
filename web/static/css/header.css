@@ -26,9 +26,10 @@
     font-size: 30px;
     margin-right: 11px;
     margin-top: 5px;
+    color: #3e4142;
 }
 
-.toggle-switch:hover {
+.toggle-switch:hover .uil-bars{
     cursor: pointer;
     color: #5B89FE;
 }
@@ -44,11 +45,17 @@
     margin-top: 3px;
 }
 
-.uil-bell {
+.fa-bell {
     display: block;
-    font-size: 36px;
-    margin-left: -9px;
-    margin-top: -10px;
+    font-size: 29px;
+    margin-left: -1px;
+    margin-top: 3px;
+    color: #3e4142;
+}
+
+.fa-bell:hover {
+    color: #5B89FE;
+    cursor: pointer;
 }
 
 .user-all {
@@ -87,7 +94,7 @@
     font-size: 15px;
 }
 
-.option{
+.option {
     height: 35px;
     line-height: 35px;
     text-align: center;
@@ -95,7 +102,7 @@
     color: #0f0f0f;
 }
 
-.option:hover{
+.option:hover {
     background-color: #5B89FE;
     cursor: pointer;
 }
