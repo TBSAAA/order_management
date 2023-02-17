@@ -1,9 +1,7 @@
-from django.http import QueryDict
-from django.template import Library, TemplateSyntaxError
+from django.template import Library
 from django.conf import settings
 import copy
 
-from django.template.base import kwarg_re
 
 register = Library()
 
@@ -22,3 +20,8 @@ def dynamic_menu(request):
 
     return {'menu_list': user_menu_list}
 
+
+@register.inclusion_tag("tag/breadcrumb.html")
+def dynamic_breadcrumb(request):
+    breadcrumb_list = request.order_user.breadcrumb_list
+    return {'breadcrumb_list': breadcrumb_list}

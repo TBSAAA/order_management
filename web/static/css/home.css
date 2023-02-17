@@ -3,224 +3,64 @@
     padding: 0;
 }
 
-html, body {
-    width: 100%;
-    height: 100%;
-}
 
-
-#box {
-    height: 100px;
-    margin: 0 auto;
-    width: fit-content;
-    padding-top: 5%;
-}
-
-#cmdBox {
-    width: 615px;
-    height: 615px;
-    float: left;
-}
-
-.cmd {
-    width: 600px;
-    height: 600px;
-    border-radius: 10px 10px 5px 5px;
-    background-color: rgba(255, 255, 255, 0.9);
-    transition: all 0.3s;
-    font-size: 14px;
-    color: rgb(88, 89, 92);
-    position: relative;
+.side-bar{
+    background-color: #f4f5fc;
+    position: absolute;
+    left: 0;
     top: 0;
+    bottom: 0;
+    width: 250px;
+    border: 1px solid #e0e1e7;
+}
+
+.side-bar > .brand{
+    height: 60px;
+    border-bottom: 1px solid #e0e1e7;
+    padding: 10px;
+}
+
+.side-bar > .menu-body{
+    margin-top: 10px;
+    overflow: auto;
+}
+
+.right-box{
+    position: absolute;
+    left: 250px;
     right: 0;
+    top: 0;
+    bottom: 0;
+    border: 1px solid #e0e1e7;
 }
 
-.cmd:hover {
-    width: 615px;
-    height: 615px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    margin: -5px 0 0 -5px;
-    z-index: 1;
+.header-box{
+    height: 60px;
+    background-color: #f4f5fc;
 }
 
-.cmd .title {
-    width: 100%;
-    height: 25px;
-    background-image: linear-gradient(to top, rgb(184, 184, 184), white);
+.content-box{
+    position: absolute;
+    background-color: #f2f2f2;
+    border: 1px solid #e0e1e7;
+    border-bottom: none;
+    top: 59px;
+    left: -1px;
+    right: 0;
+    bottom: 0;
+    padding: 8px 25px;
     font-size: 14px;
-    line-height: 25px;
+    overflow: scroll;
 }
 
-.cmd .title span {
-    display: inline-block;
-    width: 70%;
-    text-align: center;
-    /* background-color: red; */
+.breadcrumb-item > a{
+    color: #2b5dff;
 }
 
-.cmd .click {
-    margin-left: 10px;
-    float: left;
+.breadcrumb-item{
+    font-size: 16px;
 }
 
-.cmd .click div {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin: 8px 0 0 10px;
-    float: left;
-}
-
-.cmd .click .red {
-    background-color: #ff1b22;
-    box-shadow: 0 0 1px #ff1b22;
-}
-
-.cmd .click .red:hover {
-    background-color: #ff6268;
-    box-shadow: 0 0 3px #ff1b22;
-}
-
-.cmd .click .yellow {
-    background-color: #ffaf00;
-    box-shadow: 0 0 1px #ffaf00;
-}
-
-.cmd .click .yellow:hover {
-    background-color: #ffd373;
-    box-shadow: 0 0 3px #ffaf00;
-}
-
-.cmd .click .green {
-    background-color: #00931a;
-    box-shadow: 0 0 1px #00931a;
-}
-
-.cmd .click .green:hover {
-    background-color: rgb(0, 196, 36);
-    box-shadow: 0 0 3px #00931a;
-}
-
-.cmdText {
-    padding-top: 10px;
-    padding-left: 15px;
-}
-
-
-
-.ul-list {
-    margin-left: 15px;
-}
-
-.ul-list a {
-    text-decoration: none;
-    color: rgb(88, 89, 92);
-}
-
-.ul-list a:hover {
-    color: rgb(0, 132, 255);
-}
-
-
-.profile-box {
-    float: right;
-    width: 20rem;
-    height: 25rem;
-    background-color: white;
-    margin-top: 100px;
-    margin-left: 300px;
-    border-radius: 2%;
-    transition: all 0.3s;
-    text-align: center;
-}
-
-.avatar {
-    width: 8rem;
-    height: 8rem;
-    background-size: cover;
-    border-radius: 50%;
-    position: relative;
-    top: -15%;
-    left: 50%;
-    margin-left: -4rem;
-    transition: all 0.3s;
-}
-
-.profile-title {
-    width: auto;
-    margin: 0 auto;
-}
-
-@keyframes typing {
-    from {
-        width: 0;
-    }
-}
-
-@keyframes blink-caret {
-    50% {
-        border-color: transparent;
-    }
-}
-
-.profile-title p {
-    font-size: 1.2rem;
-    border-right: .1em solid;
-    width: 12ch;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typing 2s steps(20, end), blink-caret .3s step-end infinite alternate;
-    margin: -30px 0 0 90px;
-    transition: all 0.3s;
-}
-
-.profile-title .fg {
-    width: 80%;
-    height: 2px;
-    background-image: linear-gradient(to left, #3498db, #2980b9);
-    margin: 5% 0 0 10%;
-}
-
-.profile-text {
-    width: 80%;
-    height: 45%;
-    overflow: hidden;
-    text-align: center;
-    color: rgb(70, 70, 70);
-    animation-name: profile-text;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-    margin: 5% 0 0 10%;
-    transition: all 0.3s;
-}
-
-.profile-text p {
-    margin-top: 5px;
-}
-
-@keyframes profile-text {
-    0% {
-        transform: translateY(50px);
-        color: white;
-    }
-
-    100% {
-        transform: translateY(0);
-        color: rgb(70, 70, 70);
-    }
-}
-
-.profile-Button {
-    width: 100%;
-}
-
-.profile-Button a {
-    display: inline-block;
-    float: left;
-    width: 105px;
-    height: 30px;
-    line-height: 50px;
-    text-decoration: none;
-    color: gray;
-    transition: all 0.3s;
+.breadcrumb-item > a:hover{
+    color: #ff5c2b;
 }

@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% load static %}
-{% load menu %}
+{% load dynamic_html %}
 
 {% block js %}
     <script type="text/javascript" src="{% static 'js/common.js' %}"></script>
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{% static 'plugins/fontawesome-free-6.3.0-web/css/fontawesome.css' %}">
     <link rel="stylesheet" href="{% static 'plugins/fontawesome-free-6.3.0-web/css/brands.css' %}">
     <link rel="stylesheet" href="{% static 'plugins/fontawesome-free-6.3.0-web/css/solid.css' %}">
-    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <link rel="stylesheet" href="{% static 'css/menu.css' %}">
     <link rel="stylesheet" href="{% static 'css/header.css' %}">
 {% endblock %}
@@ -33,22 +33,7 @@
 
             <div class="menu">
                 {% dynamic_menu request %}
-{#                <div class="level-1">#}
-{#                    <i class="uil uil-users-alt"></i>#}
-{#                    <span>User Management</span>#}
-{#                    <i class="uil uil-angle-down"></i>#}
-{##}
-{#                    <div class="level-2 d-none">#}
-{#                        <a href="/users/">user list</a>#}
-{#                    </div>#}
-{##}
-{#                    <div class="level-2 d-none">#}
-{#                        <a href="/transaction_records/">transaction records</a>#}
-{#                    </div>#}
-{##}
-{#                </div>#}
             </div>
-
 
         </div>
     </div>
@@ -57,7 +42,7 @@
         <div class="header-box">
             <div class="user-box">
                 <div class="message">
-{#                    <i class="uil uil-bell"></i>#}
+                    {#                    <i class="uil uil-bell"></i>#}
                     <i class="fa-regular fa-bell"></i>
                 </div>
                 <div class="user-all">
@@ -81,7 +66,9 @@
 
             </div>
         </div>
-        <div class="content-box"></div>
+        <div class="content-box">
+            {% dynamic_breadcrumb request %}
+        </div>
     </div>
 
 {% endblock %}

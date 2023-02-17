@@ -150,8 +150,8 @@ MENU_LIST = {
             "icon": "uil uil-users-alt",
             "children": [
                 {"title": "user list", "url": "/user/list/", "name": "user_list"},
-                {"title": "level management", "url": "/user/list/", "name": "level_list"},
-                {"title": "Price Strategy", "url": "/user/list/", "name": "price_list"},
+                {"title": "level management", "url": "/level/list/", "name": "level_list"},
+                {"title": "Price Strategy", "url": "/product/list", "name": "price_list"},
             ]
         },
         {

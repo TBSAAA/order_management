@@ -10,6 +10,8 @@ class UserInfo(object):
         self.type = user_type
         self.name = name
         self.level = level
+        self.menu_name = None
+        self.breadcrumb_list = []
 
 
 class Authority(MiddlewareMixin):
@@ -50,6 +52,18 @@ class Authority(MiddlewareMixin):
             # normal request
             return render(request, 'permission.html')
 
-        # 6. if have permission, get navagation list
-        nav_list = []
-        nav_list.append(permission_dict[visit_name]['title'])
+        # 6. if have permission, get breadcrumb list
+        breadcrumb_list = [permission_dict[visit_name]['title']]
+
+        menu_name = visit_name
+        parent = permission_dict[visit_name]['parent']
+        while parent:
+            menu_name = parent
+            breadcrumb_list.insert(0, permission_dict[parent]['title'])
+            parent = permission_dict[parent]['parent']
+
+        # 7. save menu_name and breadcrumb_list to request
+        request.order_user.menu_name = menu_name
+        request.order_user.breadcrumb_list = breadcrumb_list
+
+        print(request.order_user.breadcrumb_list)
