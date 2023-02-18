@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, HttpResponse
 
 def order_list(request):
-    HttpResponse("order_list")
+    # HttpResponse("order_list")
+    return render(request, 'permission.html')
 
 
 def order_add(request):

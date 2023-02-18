@@ -7,8 +7,8 @@ var submit = function (url, data) {
         data: data,
         success: function (data) {
             alert(data['message']);
-            if (data['status_code'] === 1) {
-                location.href = url === '/api/login' ? '/challenge/' : '/login/';
+            if (data['success'] === true) {
+                location.href = data['data']['url'];
             }
         },
         error: function (e) {

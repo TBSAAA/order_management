@@ -1,7 +1,8 @@
 $(function () {
     $(".level-1").click(function () {
-        $(this).parent().siblings().find(".level-2").toggleClass("d-none");
         $(this).find(".level-2").toggleClass("d-none");
+        // $(this).siblings().find(".level-2").addClass("d-none");
+
         $(this).find(".uil-angle-down").toggleClass("uil-angle-down-rotate");
     });
 })
