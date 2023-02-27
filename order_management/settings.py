@@ -138,7 +138,7 @@ ORDER_USER_SESSION = 'user_info'
 
 # urls config
 INDEX_URL = "/index"
-WHITE_LIST_URL = ['/login/', '/get_code/', '/register/', '/login_with_code/', '/']
+WHITE_LIST_URL = ['/login/', '/get_code/', '/register/', '/login_with_code/', '/', '/study/experience/']
 LOGIN_URL = "/login"
 HOME_URL = "/home"
 

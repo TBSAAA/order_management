@@ -16,9 +16,13 @@ Including another URLconf
 # from django.contrib import admin
 from django.urls import path
 from web.views import account, user,order,level,product
+from web.views import jack
 
 urlpatterns = [
     path('', account.jack_home, name='jack_home'),
+    path('study/experience/', jack.study_experience, name='jack_experience'),
+
+
     path('login/', account.login, name='login'),
     path('get_code/', account.get_code, name='get_code'),
     path('register/', account.register, name='register'),
